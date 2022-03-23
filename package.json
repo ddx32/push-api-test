@@ -1,0 +1,21 @@
+{
+  "name": "prusa-pusher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "web-push": "^3.4.5",
+    "ws": "^8.5.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.0"
+  }
+}
