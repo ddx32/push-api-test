@@ -1,9 +1,6 @@
 self.addEventListener("push", (event) => {
   console.log(self.registration);
   let data = {}
-  if (event.data) {
-    data = event.data.json()
-  }
   self.registration.showNotification("Sample notification", {});
 
   // var notification = new self.Notification(title, {
