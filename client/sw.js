@@ -1,16 +1,12 @@
 self.addEventListener("push", (event) => {
   console.log(self.registration);
-  let data = {}
-  self.registration.showNotification("Sample notification", {});
+  try {
+    const data = JSON.parse(event.data);
+    self.registration.showNotification(data.title, {
+      body: data.body
+    });
 
-  // var notification = new self.Notification(title, {
-  //   body: data.message || 'Default message',
-  //   tag: 'sample notification'
-  // })
-  
-  // notification.addEventListener('click', function() {
-  //   if (clients.openWindow) {
-  //     clients.openWindow('https://connect.prusa3d.com');
-  //   }
-  // })
+  } catch (err) {
+    self.registration.showNotification("Sample notification", {});
+  }
 });
