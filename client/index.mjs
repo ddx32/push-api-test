@@ -17,22 +17,4 @@ const subscribe = async () => {
 window.addEventListener("load", async () => {
   const subButton = document.getElementById("subscribe");
   subButton.addEventListener("click", subscribe);
-
-  if ("serviceWorker" in navigator) {
-    let serviceWorker = await navigator.serviceWorker.register("/sw.js", {
-      scope: "/",
-    });
-    console.log(serviceWorker);
-  }
-
-  const socket = new WebSocket("ws://localhost:8080");
-  socket.addEventListener("open", (event) => socket.send("Wytaj serveri"));
-
-  socket.addEventListener("message", (event) =>
-    console.log("Servir prawi: ", event.data)
-  );
-
-  fetch("http://localhost:8090/insecure").then((response) =>
-    console.log(response)
-  );
 });
