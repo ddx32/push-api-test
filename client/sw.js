@@ -5,7 +5,9 @@ self.addEventListener("push", (event) => {
     data = event.data
   }
 
-  var notification = new self.Notification(data.title || 'Default title', {
+  const title = data.title || 'Default title';
+
+  var notification = new self.Notification(title, {
     body: data.message || 'Default message',
     tag: 'sample notification'
   })
