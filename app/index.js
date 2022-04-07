@@ -23,4 +23,9 @@ const pushSubscription = {
   },
 };
 
-webpush.sendNotification(pushSubscription, "I'm sending you an SMS");
+const notificationData = {
+  title: "I'm sending you an SMS",
+  body: "Please read me it's important plz"
+}
+
+webpush.sendNotification(pushSubscription, JSON.stringify(notificationData));
